@@ -247,12 +247,12 @@ export declare const ControllerApiAxiosParamCreator: (configuration?: Configurat
      *
      * @summary Get statistics for user
      * @param {string} botId
-     * @param {string} startTime
      * @param {string} endTime
+     * @param {string} startTime
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    controllerStatisticsGet: (botId: string, startTime: string, endTime: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
+    controllerStatisticsGet: (botId: string, endTime: string, startTime: string, options?: RawAxiosRequestConfig) => Promise<RequestArgs>;
     /**
      *
      * @summary Deposit transaction
@@ -381,12 +381,12 @@ export declare const ControllerApiFp: (configuration?: Configuration) => {
      *
      * @summary Get statistics for user
      * @param {string} botId
-     * @param {string} startTime
      * @param {string} endTime
+     * @param {string} startTime
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    controllerStatisticsGet(botId: string, startTime: string, endTime: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<StatisticsGetResponseRecordsInner>>>;
+    controllerStatisticsGet(botId: string, endTime: string, startTime: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<StatisticsGetResponseRecordsInner>>>;
     /**
      *
      * @summary Deposit transaction
@@ -515,12 +515,12 @@ export declare const ControllerApiFactory: (configuration?: Configuration, baseP
      *
      * @summary Get statistics for user
      * @param {string} botId
-     * @param {string} startTime
      * @param {string} endTime
+     * @param {string} startTime
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    controllerStatisticsGet(botId: string, startTime: string, endTime: string, options?: RawAxiosRequestConfig): AxiosPromise<Array<StatisticsGetResponseRecordsInner>>;
+    controllerStatisticsGet(botId: string, endTime: string, startTime: string, options?: RawAxiosRequestConfig): AxiosPromise<Array<StatisticsGetResponseRecordsInner>>;
     /**
      *
      * @summary Deposit transaction
@@ -649,12 +649,12 @@ export interface ControllerApiInterface {
      *
      * @summary Get statistics for user
      * @param {string} botId
-     * @param {string} startTime
      * @param {string} endTime
+     * @param {string} startTime
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    controllerStatisticsGet(botId: string, startTime: string, endTime: string, options?: RawAxiosRequestConfig): AxiosPromise<Array<StatisticsGetResponseRecordsInner>>;
+    controllerStatisticsGet(botId: string, endTime: string, startTime: string, options?: RawAxiosRequestConfig): AxiosPromise<Array<StatisticsGetResponseRecordsInner>>;
     /**
      *
      * @summary Deposit transaction
@@ -783,12 +783,12 @@ export declare class ControllerApi extends BaseAPI implements ControllerApiInter
      *
      * @summary Get statistics for user
      * @param {string} botId
-     * @param {string} startTime
      * @param {string} endTime
+     * @param {string} startTime
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    controllerStatisticsGet(botId: string, startTime: string, endTime: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<StatisticsGetResponseRecordsInner[], any, {}>>;
+    controllerStatisticsGet(botId: string, endTime: string, startTime: string, options?: RawAxiosRequestConfig): Promise<import("axios").AxiosResponse<StatisticsGetResponseRecordsInner[], any, {}>>;
     /**
      *
      * @summary Deposit transaction

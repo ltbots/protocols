@@ -1,4 +1,4 @@
-module github.com/ltbots/protocols/go
+module github.com/ltbots/protocols
 
 go 1.24.6
 

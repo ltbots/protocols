@@ -451,18 +451,18 @@ export const ControllerApiAxiosParamCreator = function (configuration) {
          *
          * @summary Get statistics for user
          * @param {string} botId
-         * @param {string} startTime
          * @param {string} endTime
+         * @param {string} startTime
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        controllerStatisticsGet: async (botId, startTime, endTime, options = {}) => {
+        controllerStatisticsGet: async (botId, endTime, startTime, options = {}) => {
             // verify required parameter 'botId' is not null or undefined
             assertParamExists('controllerStatisticsGet', 'botId', botId);
-            // verify required parameter 'startTime' is not null or undefined
-            assertParamExists('controllerStatisticsGet', 'startTime', startTime);
             // verify required parameter 'endTime' is not null or undefined
             assertParamExists('controllerStatisticsGet', 'endTime', endTime);
+            // verify required parameter 'startTime' is not null or undefined
+            assertParamExists('controllerStatisticsGet', 'startTime', startTime);
             const localVarPath = `/api/v1/statistics`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -476,11 +476,11 @@ export const ControllerApiAxiosParamCreator = function (configuration) {
             if (botId !== undefined) {
                 localVarQueryParameter['bot_id'] = botId;
             }
-            if (startTime !== undefined) {
-                localVarQueryParameter['start_time'] = startTime;
-            }
             if (endTime !== undefined) {
                 localVarQueryParameter['end_time'] = endTime;
+            }
+            if (startTime !== undefined) {
+                localVarQueryParameter['start_time'] = startTime;
             }
             localVarHeaderParameter['Accept'] = 'application/json';
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -728,13 +728,13 @@ export const ControllerApiFp = function (configuration) {
          *
          * @summary Get statistics for user
          * @param {string} botId
-         * @param {string} startTime
          * @param {string} endTime
+         * @param {string} startTime
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async controllerStatisticsGet(botId, startTime, endTime, options) {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.controllerStatisticsGet(botId, startTime, endTime, options);
+        async controllerStatisticsGet(botId, endTime, startTime, options) {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.controllerStatisticsGet(botId, endTime, startTime, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ControllerApi.controllerStatisticsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -906,13 +906,13 @@ export const ControllerApiFactory = function (configuration, basePath, axios) {
          *
          * @summary Get statistics for user
          * @param {string} botId
-         * @param {string} startTime
          * @param {string} endTime
+         * @param {string} startTime
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        controllerStatisticsGet(botId, startTime, endTime, options) {
-            return localVarFp.controllerStatisticsGet(botId, startTime, endTime, options).then((request) => request(axios, basePath));
+        controllerStatisticsGet(botId, endTime, startTime, options) {
+            return localVarFp.controllerStatisticsGet(botId, endTime, startTime, options).then((request) => request(axios, basePath));
         },
         /**
          *
@@ -1073,13 +1073,13 @@ export class ControllerApi extends BaseAPI {
      *
      * @summary Get statistics for user
      * @param {string} botId
-     * @param {string} startTime
      * @param {string} endTime
+     * @param {string} startTime
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    controllerStatisticsGet(botId, startTime, endTime, options) {
-        return ControllerApiFp(this.configuration).controllerStatisticsGet(botId, startTime, endTime, options).then((request) => request(this.axios, this.basePath));
+    controllerStatisticsGet(botId, endTime, startTime, options) {
+        return ControllerApiFp(this.configuration).controllerStatisticsGet(botId, endTime, startTime, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      *

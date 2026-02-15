@@ -5,13 +5,13 @@
     "type": "module",
     "exports": {
         ".": {
-            "types": "./api/index.d.ts",
-            "default": "./api/index.js"
+            "types": "./ts/api/index.d.ts",
+            "default": "./ts/api/index.js"
         }
     },
-    "types": "./api/index.d.ts",
+    "types": "./ts/api/index.d.ts",
     "files": [
-        "api"
+        "ts/api"
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json"
