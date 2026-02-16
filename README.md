@@ -1,7 +1,3 @@
-# Swagger API (api)
-## Version: 20260215
-
----
 ## Controller
 
 ### [GET] /api/v1/bots
@@ -220,8 +216,8 @@
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ------ |
 | bot_id | query |  | Yes | string (int64) |
-| end_time | query |  | Yes | string (int64) |
 | start_time | query |  | Yes | string (int64) |
+| end_time | query |  | Yes | string (int64) |
 
 #### Responses
 

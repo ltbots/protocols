@@ -30,4 +30,4 @@ generate-doc:
 		-o README.md.tmp
 	sed '1,4d' README.md.tmp > README.md && rm README.md.tmp
 
-generate: generate-go generate-ts
+generate: generate-go generate-ts generate-doc
