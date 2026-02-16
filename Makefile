@@ -23,4 +23,10 @@ generate-ts:
 	npm i
 	npm run build
 
+generate-doc:
+	rm README.md
+	npx swagger-markdown \
+		-i ./go/api/v1_swagger.json \
+		-o README.md
+
 generate: generate-go generate-ts
