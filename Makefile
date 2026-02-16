@@ -27,6 +27,7 @@ generate-doc:
 	rm README.md
 	npx swagger-markdown \
 		-i ./go/api/v1_swagger.json \
-		-o README.md
+		-o README.md.tmp
+	sed '1,4d' README.md.tmp > README.md && rm README.md.tmp
 
 generate: generate-go generate-ts
